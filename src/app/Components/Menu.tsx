@@ -8,46 +8,44 @@ export const Menu = () => {
 
   return (
     <div>
-      <div>
-        <div className={`${menuOpen ? "block" : "hidden"} `}>
-          <SideBar setMenuOpen={(val: boolean) => setMenuOpen(val)} />
-        </div>
-        <div
-          onClick={() => setMenuOpen((prev) => !prev)}
-          className="cursor-pointer"
-        >
-          <Hamburger />
-        </div>
+      {/* Sidebar */}
+      <SideBar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      {/* Hamburger Icon */}
+      <div
+        onClick={() => setMenuOpen((prev) => !prev)}
+        className="cursor-pointer p-4"
+        aria-label="Toggle menu"
+      >
+        <Hamburger />
       </div>
     </div>
   );
 };
 
-const SideBar = (props: { setMenuOpen: any }) => {
+const SideBar = ({ menuOpen, setMenuOpen }: { menuOpen: boolean; setMenuOpen: (val: boolean) => void }) => {
   return (
-    <div className="absolute h-screen w-[30%] z-10000 border-white border-2 bg-black left-0 top-0 transition ease transform duration-300 block transition-all duration-300 ease-out">
+    <div
+      className={`fixed h-screen w-[30%] z-50 border-white border-2 bg-black left-0 top-0 transform transition-all ${
+        menuOpen ? "translate-x-0 opacity-100" : "-translate-x-full opacity-0"
+      } duration-700 ease-in-out`}
+    >
+      {/* Close Button */}
       <div
-        onClick={() => props.setMenuOpen(false)}
+        onClick={() => setMenuOpen(false)}
         className="absolute p-4 flex flex-row-reverse w-full cursor-pointer h-20 items-center"
+        aria-label="Close menu"
       >
         <Arrow />
       </div>
 
-      <div
-        className={`${josefinSans.className} mx-8 my-16 py-8 text-2xl h-[35%] flex flex-col justify-between`}
-      >
-        <div className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]">
-          Home
-        </div>
-        <div className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]">
-          Map
-        </div>
-        <div className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]">
-          Profile
-        </div>
-        <div className="cursor-pointer  hover:underline tracking-wide underline-offset-[5px] ">
-          Report an Incident
-        </div>
+      {/* Menu Items */}
+      <div className={`${josefinSans.className} mx-8 my-16 py-8 text-2xl h-[35%] flex flex-col justify-between`}>
+        {["Home", "Map", "Profile", "Report an Incident"].map((item) => (
+          <div key={item} className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]">
+            {item}
+          </div>
+        ))}
       </div>
     </div>
   );
