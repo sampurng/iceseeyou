@@ -3,12 +3,15 @@
 import { useState, useRef } from "react";
 import { useLoadScript, Autocomplete } from "@react-google-maps/api";
 import { josefinSans } from "./Header";
+import "dotenv/config";
 
 const libraries: "places"[] = ["places"];
 
 export const Form = () => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyAhgeYMaNNB_2-wO6q_scv9faggzKBETIM", // Replace with your API Key
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+      ? process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+      : "", // Replace with your API Key
     libraries,
   });
 
