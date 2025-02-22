@@ -2,7 +2,7 @@ import { Header } from "./Components/Header";
 
 export default function Home() {
   return (
-    <div className="">
+    <div className="bg-[#262626]">
       {/* <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
