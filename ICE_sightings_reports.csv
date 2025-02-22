@@ -7,17 +7,24 @@ A# (Last 3 Digits),Date of ICE Arrest,Location of ICE Arrest,Reason for Courthou
 111,1/10/2025,"Courthouse (Present, Not in Custody)",DV arraignment,N/A - Arrested directly by ICE,East Boston District Court,42.370986,-71.03868,Unknown,No,N/A,ICE surveillance at courthouse,Targeted at court appearance
 739,12/13/2025,Jail,N/A,Already in custody,Jail & House of Correction,42.597504,-70.985936,Order of Removal,Unsure,N/A,Detainer placed in jail,Held beyond sentence
 746,9/10/2024,"Courthouse (Present, Not in Custody)",DV hearing,1 night,Framingham District Court,42.293208,-71.409524,In Removal Proceedings,Unsure,N/A,Unknown,ICE arrested outside courthouse
-215,2/10/2025,Courthouse (Custody),Bail hearing,2 nights,Lynn District Court,N/A,N/A,Pending Asylum,No,N/A,Detainer placed,Arrested upon release
-347,6/20/2025,Home,N/A,N/A,"345 Washington Ave, Chelsea, MA",N/A,N/A,Undocumented,No,N/A,Tip-off from prior employer,ICE claimed to have a warrant
-528,1/14/2025,Workplace,N/A,N/A,"21 Summer St, Malden, MA",N/A,N/A,TPS Holder,No,N/A,Routine workplace raid,ICE disguised as police officers
-762,9/8/2025,Car Stop,N/A,N/A,"Revere Beach Parkway, Revere, MA",N/A,N/A,In Removal Proceedings,Yes,SmartLink App,Movement tracking,Stopped for a broken taillight
-911,3/12/2025,Jail,N/A,Already in custody,Suffolk County House of Correction,N/A,N/A,DACA Expired,Unsure,N/A,ICE detainer placed,Held 48 extra hours
-404,7/17/2025,Police Precinct,Turned self in for minor charge,0 hours,"650 Harrison Ave, Boston, MA",N/A,N/A,Green Card Holder (Prior Conviction),No,N/A,Law enforcement database flag,Arrested during booking
-573,8/22/2025,"Courthouse (Present, Not in Custody)",Witness in a case,N/A,Worcester District Court,N/A,N/A,Pending Green Card,No,N/A,Courthouse security records,ICE waited in lobby
-319,4/30/2025,Probation Office,Monthly parole check-in,0 hours,"125 West St, Boston, MA",N/A,N/A,Order of Removal,No,N/A,Probation office notified ICE,ICE arrest after check-in
-641,2/25/2025,Street,N/A,N/A,"Broadway & 3rd St, Everett, MA",N/A,N/A,Undocumented,No,N/A,Random stop,Claimed to match suspect description
-854,11/11/2025,Jail,N/A,Already in custody,Middlesex County Jail,N/A,N/A,Pending Asylum,Yes,Ankle Monitor,ICE detainer before release,Held after criminal case
-592,5/21/2025,Workplace,N/A,N/A,"500 Harrison Ave, Boston, MA",N/A,N/A,TPS Expired,No,N/A,Employer tip-off,Multiple individuals arrested
-733,10/3/2025,Car Stop,N/A,N/A,"Route 9, Framingham, MA",N/A,N/A,Pending Green Card,No,N/A,Police database check,Arrested at traffic stop
-428,6/13/2025,Home,N/A,N/A,"142 Pearl St, Somerville, MA",N/A,N/A,Unknown,No,N/A,Surveillance from prior case,ICE claimed administrative warrant
-999,12/29/2025,Police Precinct,Reported a crime,0 hours,Brockton Police HQ,N/A,N/A,Pending Asylum,No,N/A,Police fingerprint match,Arrested while seeking help
+215,2/10/2025,Courthouse (Custody),Bail hearing,2 nights,Lynn District Court,42.466763,-70.949493,Pending Asylum,No,N/A,Detainer placed,Arrested upon release
+347,6/20/2025,Home,N/A,N/A,345 Washington Ave, Chelsea, MA,42.395374,-71.033028,Undocumented,No,N/A,Tip-off from prior employer,ICE claimed to have a warrant
+528,1/14/2025,Workplace,N/A,N/A,21 Summer St, Malden, MA,42.426615,-71.074248,TPS Holder,No,N/A,Routine workplace raid,ICE disguised as police officers
+762,9/8/2025,Car Stop,N/A,N/A,Revere Beach Parkway, Revere, MA,42.409812,-71.015583,In Removal Proceedings,Yes,SmartLink App,Movement tracking,Stopped for a broken taillight
+911,3/12/2025,Jail,N/A,Already in custody,Suffolk County House of Correction,42.339809,-71.070303,DACA Expired,Unsure,N/A,ICE detainer placed,Held 48 extra hours
+404,7/17/2025,Police Precinct,Turned self in for minor charge,0 hours,650 Harrison Ave, Boston, MA,42.338888,-71.068329,Green Card Holder (Prior Conviction),No,N/A,Law enforcement database flag,Arrested during booking
+573,8/22/2025,Courthouse (Present, Not in Custody),Witness in a case,N/A,Worcester District Court,42.262563,-71.802293,Pending Green Card,No,N/A,Courthouse security records,ICE waited in lobby
+319,4/30/2025,Probation Office,Monthly parole check-in,0 hours,125 West St, Boston, MA,42.351993,-71.062409,Order of Removal,No,N/A,Probation office notified ICE,ICE arrest after check-in
+641,2/25/2025,Street,N/A,N/A,Broadway & 3rd St, Everett, MA,42.408451,-71.048611,Undocumented,No,N/A,Random stop,Claimed to match suspect description
+854,11/11/2025,Jail,N/A,Already in custody,Middlesex County Jail,42.455536,-71.066196,Pending Asylum,Yes,Ankle Monitor,ICE detainer before release,Held after criminal case
+592,5/21/2025,Workplace,N/A,N/A,500 Harrison Ave, Boston, MA,42.343731,-71.065504,TPS Expired,No,N/A,Employer tip-off,Multiple individuals arrested
+733,10/3/2025,Car Stop,N/A,N/A,Route 9, Framingham, MA,42.297321,-71.435587,Pending Green Card,No,N/A,Police database check,Arrested at traffic stop
+428,6/13/2025,Home,N/A,N/A,142 Pearl St, Somerville, MA,42.387469,-71.099506,Unknown,No,N/A,Surveillance from prior case,ICE claimed administrative warrant
+999,12/29/2025,Police Precinct,Reported a crime,0 hours,Brockton Police HQ,42.083433,-71.018379,Pending Asylum,No,N/A,Police fingerprint match,Arrested while seeking help
+100,3/5/2025,Workplace,N/A,N/A,789 Main St, Springfield, MA,42.101482,-72.589811,Pending Asylum,No,N/A,Employer tip-off,Detained after workplace raid
+256,4/18/2025,Street,N/A,N/A,Elm St & 2nd Ave, Cambridge, MA,42.373611,-71.109733,Undocumented,No,N/A,Random stop,ICE claimed suspicious behavior
+673,7/30/2025,Courthouse (Custody),Sentencing hearing,3 nights,New Bedford District Court,41.636215,-70.934205,Order of Removal,Unsure,N/A,Detainer placed,ICE picked up after sentencing
+812,10/12/2025,Car Stop,N/A,N/A,I-93 South, Quincy, MA,42.251865,-71.005236,Permanent Resident,No,N/A,License plate check,Arrested at highway stop
+905,11/22/2025,Home,N/A,N/A,12 Oak St, Worcester, MA,42.262593,-71.802293,DACA Expired,No,N/A,ICE surveillance,Raided home in early morning
+311,5/9/2025,Police Precinct,Turned self in for unpaid fines,0 hours,Salem Police Station,42.51954,-70.896716,Permanent Resident,No,N/A,Police database flag,Arrested upon self-report
+429,8/4/2025,Jail,N/A,Already in custody,Hampden County Jail,42.106216,-72.591857,Pending Green Card,Yes,Ankle Monitor,ICE detainer placed,Held beyond original sentence
