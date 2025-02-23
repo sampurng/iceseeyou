@@ -1,7 +1,7 @@
 "use client";
 
 import { josefinSans } from "@/app/Components/Header";
-import React, { useState, FormEvent, useEffect } from "react";
+import React, { useState, FormEvent } from "react";
 
 type ChatMessage = {
   role: "system" | "user" | "assistant";
