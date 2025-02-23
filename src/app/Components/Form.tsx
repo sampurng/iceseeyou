@@ -87,6 +87,7 @@ export const Form = () => {
       });
 
       const result = await response.json();
+      console.log(result);
       if (response.ok) {
         // alert("Success!");
         toast.success("Uploaded successfully!", {
