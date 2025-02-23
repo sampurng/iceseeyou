@@ -4,13 +4,13 @@ import { josefinSans } from "./Header";
 import { Arrow } from "../Assets/Icons/Arrow";
 
 export const Menu = () => {
-  const [menuOpen, setMenuOpen] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   return (
     <div>
       <div>
         <div className={`${menuOpen ? "block" : "hidden"} `}>
-          <SideBar setMenuOpen={(val: boolean) => setMenuOpen(val)} />
+          <SideBar setMenuOpen={setMenuOpen} />
         </div>
         <div
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -23,7 +23,9 @@ export const Menu = () => {
   );
 };
 
-const SideBar = (props: { setMenuOpen: any }) => {
+const SideBar = (props: {
+  setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   return (
     <div className="absolute h-screen w-[30%] z-10000 border-white border-2 bg-black left-0 top-0 transition ease transform duration-300 block transition-all duration-300 ease-out">
       <div
