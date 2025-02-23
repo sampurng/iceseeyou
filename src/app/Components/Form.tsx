@@ -58,7 +58,7 @@ export const Form = () => {
   };
 
   // Validate form & submit data
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Check if any field is empty
@@ -71,6 +71,23 @@ export const Form = () => {
 
     // Log JSON output
     console.log("Form Data Submitted:", JSON.stringify(formData, null, 2));
+    try {
+      const response = await fetch("/api/createUser", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (response.ok) {
+        alert("User created successfully!");
+      } else {
+        alert(result.error || "Failed to create user");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong!");
+    }
   };
 
   return (

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^6.4.1",
     "@react-google-maps/api": "^2.20.6",
     "@supabase/supabase-js": "^2.48.1",
     "dotenv": "^16.4.7",
@@ -26,6 +27,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "postcss": "^8",
+    "prisma": "^6.4.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model input_form {
+  id                   Int                      @id @default(autoincrement())
+  user_id              String?                  @db.Uuid
+  location             Unsupported("geography")
+  report_date          DateTime?                @default(now()) @db.Timestamp(6)
+  description          String
+  status               String?                  @default("pending")
+  a_number             String?                  @db.VarChar(10)
+  reason_for_visit     String?
+  time_held            String?
+  immigration_status   String?
+  under_ice_monitoring Boolean?
+  type_of_monitoring   String?
+  how_ice_found_out    String?
+  additional_info      String?
+  users                users?                   @relation(fields: [user_id], references: [uuid], onDelete: Cascade, onUpdate: NoAction)
+  spam_reports         spam_reports[]
+}
+
+model spam_reports {
+  id          Int         @id @default(autoincrement())
+  user_email  String
+  report_date DateTime?   @default(now()) @db.Timestamp(6)
+  report_id   Int?
+  input_form  input_form? @relation(fields: [report_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+}
+
+/// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
+model spatial_ref_sys {
+  srid      Int     @id
+  auth_name String? @db.VarChar(256)
+  auth_srid Int?
+  srtext    String? @db.VarChar(2048)
+  proj4text String? @db.VarChar(2048)
+}
+
+model users {
+  uuid              String       @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  email             String       @unique
+  created_at        DateTime?    @default(now()) @db.Timestamp(6)
+  updated_at        DateTime?    @default(now()) @db.Timestamp(6)
+  credibility_score Int?         @default(100)
+  input_form        input_form[]
+}
