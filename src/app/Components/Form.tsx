@@ -21,9 +21,9 @@ export const Form = () => {
     email: "",
     dateOfArrest: "",
     iceMonitoring: "",
-    immigrationStatus: "",
-    arrestNumber: "",
-    reasonForRaid: "",
+    immigrationStatus: "aa",
+    arrestNumber: "123",
+    reasonForRaid: "aa",
     reasonForCourtVisit: "",
     timeHeldBeforeICE: "",
     additionalInfo: "",
@@ -63,6 +63,7 @@ export const Form = () => {
     const tid = toast.loading("Uploading Data");
 
     // Check if any field is empty
+    console.log(formData);
     for (const key in formData) {
       if (formData[key as keyof typeof formData] === "") {
         // alert(`Error: ${key.replace(/([A-Z])/g, " $1")} cannot be empty`);

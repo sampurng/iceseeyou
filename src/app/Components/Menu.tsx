@@ -3,14 +3,16 @@ import React from "react";
 import { josefinSans } from "./Header";
 import { Arrow } from "../Assets/Icons/Arrow";
 
-export const Menu = () => {
+export const Menu = (props: {
+  setMenuType: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
   return (
     <div>
       <div>
         <div className={`${menuOpen ? "block" : "hidden"} `}>
-          <SideBar setMenuOpen={setMenuOpen} />
+          <SideBar setMenuOpen={setMenuOpen} setMenuType={props.setMenuType} />
         </div>
         <div
           onClick={() => setMenuOpen((prev) => !prev)}
@@ -25,6 +27,7 @@ export const Menu = () => {
 
 const SideBar = (props: {
   setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setMenuType: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   return (
     <div className="absolute h-screen w-[30%] z-10000 border-white border-2 bg-black left-0 top-0 transition ease transform duration-300 block transition-all duration-300 ease-out">
@@ -38,17 +41,51 @@ const SideBar = (props: {
       <div
         className={`${josefinSans.className} mx-8 my-16 py-8 text-2xl h-[35%] flex flex-col justify-between`}
       >
-        <div className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]">
+        <div
+          className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]"
+          onClick={() => {
+            props.setMenuType("home");
+            props.setMenuOpen(false);
+          }}
+        >
           Home
         </div>
-        <div className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]">
+        <div
+          className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]"
+          onClick={() => {
+            props.setMenuType("map");
+            props.setMenuOpen(false);
+          }}
+        >
           Map
         </div>
-        <div className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]">
-          Profile
+        <div
+          className="cursor-pointer hover:underline tracking-wide underline-offset-[5px]"
+          onClick={() => {
+            props.setMenuType("chat");
+            props.setMenuOpen(false);
+          }}
+        >
+          Chat
         </div>
-        <div className="cursor-pointer  hover:underline tracking-wide underline-offset-[5px] ">
+        <div
+          className="cursor-pointer  hover:underline tracking-wide underline-offset-[5px] "
+          onClick={() => {
+            props.setMenuType("report");
+            props.setMenuOpen(false);
+          }}
+        >
           Report an Incident
+        </div>
+
+        <div
+          className="cursor-pointer  hover:underline tracking-wide underline-offset-[5px] "
+          onClick={() => {
+            props.setMenuType("safe");
+            props.setMenuOpen(false);
+          }}
+        >
+          Am i safe?
         </div>
       </div>
     </div>
