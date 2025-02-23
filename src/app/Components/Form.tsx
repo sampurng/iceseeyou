@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import { useLoadScript, Autocomplete } from "@react-google-maps/api";
 import { josefinSans } from "./Header";
 import "dotenv/config";
+import { Toaster, toast } from "react-hot-toast";
 
 const libraries: "places"[] = ["places"];
 
@@ -59,17 +60,25 @@ export const Form = () => {
   // Validate form & submit data
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const tid = toast.loading("Uploading Data");
 
     // Check if any field is empty
     for (const key in formData) {
       if (formData[key as keyof typeof formData] === "") {
-        alert(`Error: ${key.replace(/([A-Z])/g, " $1")} cannot be empty`);
+        // alert(`Error: ${key.replace(/([A-Z])/g, " $1")} cannot be empty`);
+        toast.error(
+          `Error: ${key.replace(/([A-Z])/g, " $1")} cannot be empty`,
+          { id: tid }
+        );
+
         return;
       }
     }
 
     // Log JSON output
     console.log("Form Data Submitted:", JSON.stringify(formData, null, 2));
+    const toastId = toast.loading("Uploading Data");
+
     try {
       const response = await fetch("/api/User", {
         method: "POST",
@@ -79,18 +88,29 @@ export const Form = () => {
 
       const result = await response.json();
       if (response.ok) {
-        alert("User created successfully!");
+        // alert("Success!");
+        toast.success("Uploaded successfully!", {
+          id: toastId,
+        });
       } else {
-        alert(result.error || "Failed to create user");
+        // alert(result.error || "Failed to create user");
+        toast.error("Failed to create User!", {
+          id: toastId,
+        });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Something went wrong!");
+      // alert("Something went wrong!");
+      toast.error("Something went wrong!", {
+        id: toastId,
+      });
     }
   };
 
   return (
     <div className="mb-16">
+      <Toaster position="bottom-right" />
+
       <div
         className={`${josefinSans.className} text-3xl items-center py-8 justify-center flex flex-col`}
       >
