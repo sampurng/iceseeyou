@@ -183,11 +183,11 @@ export const Form = () => {
 
         {/* Additional Inputs */}
         {[
-          "immigrationStatus",
-          "arrestNumber",
-          "reasonForRaid",
-          "reasonForCourtVisit",
-          "timeHeldBeforeICE",
+          "ImmigrationStatus",
+          "ArrestNumber",
+          "ReasonForRaid",
+          "ReasonForCourtVisit",
+          "TimeHeldBeforeICE",
         ].map((field) => (
           <div
             key={field}

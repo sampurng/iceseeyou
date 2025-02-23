@@ -9,11 +9,13 @@ export const josefinSans = Josefin_Sans({
   subsets: ["latin"],
 });
 
-export const Header = () => {
+export const Header = (props: {
+  setMenuType: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   return (
     <div className="flex justify-between border-black border-b p-8">
       <div className="bg-[#262626] flex">
-        <Menu />
+        <Menu setMenuType={props.setMenuType} />
       </div>
       <div className={`bg-[#262626] flex ${josefinSans.className}`}>
         ICESEEYOU
