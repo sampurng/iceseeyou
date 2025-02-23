@@ -9,13 +9,13 @@ datasource db {
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.
 model input_form {
-  id                   Int                      @id @default(autoincrement())
-  user_id              String?                  @db.Uuid
-  location             Unsupported("geography")
-  report_date          DateTime?                @default(now()) @db.Timestamp(6)
-  description          String
-  status               String?                  @default("pending")
-  a_number             String?                  @db.VarChar(10)
+  id                   Int       @id @default(autoincrement())
+  user_id              String?   @db.Uuid
+  location             String?
+  report_date          DateTime? @default(now()) @db.Timestamp(6)
+  description          String?
+  status               String?   @default("pending")
+  a_number             String?   @db.VarChar(10)
   reason_for_visit     String?
   time_held            String?
   immigration_status   String?
@@ -23,16 +23,10 @@ model input_form {
   type_of_monitoring   String?
   how_ice_found_out    String?
   additional_info      String?
-  users                users?                   @relation(fields: [user_id], references: [uuid], onDelete: Cascade, onUpdate: NoAction)
-  spam_reports         spam_reports[]
-}
-
-model spam_reports {
-  id          Int         @id @default(autoincrement())
-  user_email  String
-  report_date DateTime?   @default(now()) @db.Timestamp(6)
-  report_id   Int?
-  input_form  input_form? @relation(fields: [report_id], references: [id], onDelete: Cascade, onUpdate: NoAction)
+  users                users?    @relation(fields: [user_id], references: [uuid], onDelete: Cascade, onUpdate: NoAction)
+  spam                 Boolean
+  latitude             Float
+  longitude            Float
 }
 
 /// This table contains check constraints and requires additional setup for migrations. Visit https://pris.ly/d/check-constraints for more info.

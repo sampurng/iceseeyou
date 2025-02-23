@@ -1,8 +1,8 @@
 "use client";
 
 import { Josefin_Sans } from "next/font/google";
-import { Menu } from "./Menu";
 import React from "react";
+import { Menu } from "./Menu";
 
 export const josefinSans = Josefin_Sans({
   weight: "400",
