@@ -80,7 +80,7 @@ export async function POST(req: NextRequest) {
                   longitude: body.longitude,
                 },
               })
-              .then((res) => console.log("Inserted form"));
+              .then(() => console.log("Inserted form"));
           // userExists = true;
         } catch (e) {
           console.log(e);
