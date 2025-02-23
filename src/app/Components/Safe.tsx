@@ -37,10 +37,9 @@ export const Safe = () => {
         <div
           className={`${josefinSans.className} text-3xl items-center py-8 justify-center flex flex-col`}
         >
-          <div>See Something, Say Something</div>
+          <div>We are here for you</div>
           <div className="text-xl pt-4">
-            Fill out this form for possible ICE sightings and leave the rest to
-            us
+            Find out whether your area is safe or not
           </div>
         </div>
         <form
@@ -58,7 +57,7 @@ export const Safe = () => {
                   value={placeOfArrest}
                   onChange={handleChange}
                   className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
-                  placeholder="Place of Arrest"
+                  placeholder="Check your Neighborhood"
                 />
               </Autocomplete>
             )}
