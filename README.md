@@ -11,7 +11,6 @@ Our project is built using the following technologies:
 | **Frontend**   | [Next.js](https://nextjs.org) (React-based framework) |
 | **Backend**    | [Supabase](https://supabase.com) (PostgreSQL & authentication) |
 | **AI & Data Processing** | OpenAI API (Gen AI for credibility scoring) |
-| **Mapping & Visualization** | Heatmap.js & Leaflet.js |
 | **Deployment** | [Vercel](https://vercel.com) |
 
 ## Getting Started
@@ -75,6 +74,20 @@ vercel
 
 ## Application Workflow
 ![Application Workflow](https://github.com/user-attachments/assets/7ff0c565-2475-4b2b-a637-b4517f41140b)
+
+Contributors ✨: 
+
+> Adarsh Raj
+
+> Sampurna
+
+> Bao Nguyen
+
+> Thu Vo
+
+> Jonathan Jung
+
+
 
 Every contribution strengthens the map.
 
