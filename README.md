@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Project Overview:
+ICEseeyou is a real-time, crowdsourced web application that allows users to track and report ICE (Immigration and Customs Enforcement) activity. The platform integrates user-submitted reports, AI-driven credibility scoring, and a heatmap to visualize ICE activity trends. It also includes a legal chatbot to assist users with immigration-related inquiries. This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
 
 ## Getting Started
 
@@ -21,18 +23,24 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
+## Tech Stack
+Our project is built using the following technologies:
 
-To learn more about Next.js, take a look at the following resources:
-
+**Frontend**: Next.js – React framework for a fast, SEO-friendly frontend. To learn more about Next.js, take a look at the following resources:
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+**Backend**: SupabaseDB – PostgreSQL-based backend for authentication and data storage.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**AI & Data Processing**: OpenAI API (Gen AI for credibility scoring)
+
+**Deployment**: Vercel
+- The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 LET'S GO LIVE!
+
+## Application Workflow
+![Application Workflow](https://github.com/user-attachments/assets/7ff0c565-2475-4b2b-a637-b4517f41140b)
