@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useRef } from "react";
 import { useLoadScript, Autocomplete } from "@react-google-maps/api";
 import { josefinSans } from "./Header";
@@ -72,7 +71,7 @@ export const Form = () => {
     // Log JSON output
     console.log("Form Data Submitted:", JSON.stringify(formData, null, 2));
     try {
-      const response = await fetch("/api/createUser", {
+      const response = await fetch("/api/User", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -91,109 +90,119 @@ export const Form = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="border-black border-1 flex flex-col p-32 justify-center items-center"
-    >
-      {/* Address Input with Autocomplete */}
+    <div className="mb-16">
       <div
-        className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
+        className={`${josefinSans.className} text-3xl items-center py-8 justify-center flex flex-col`}
       >
-        {isLoaded && (
-          <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
-            <input
-              name="placeOfArrest"
-              value={formData.placeOfArrest}
-              onChange={handleChange}
-              className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
-              placeholder="Place of Arrest"
-            />
-          </Autocomplete>
-        )}
-      </div>
-
-      {/* Email Input */}
-      <div
-        className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
-      >
-        <input
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
-          placeholder="Email"
-        />
-      </div>
-
-      {/* Date & ICE Monitoring */}
-      <div className="flex flex-row">
-        <div
-          className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
-        >
-          <input
-            name="dateOfArrest"
-            type="date"
-            value={formData.dateOfArrest}
-            onChange={handleChange}
-            className="bg-transparent border-black border-4 p-4 w-[275px] rounded-md"
-          />
-        </div>
-        <div
-          className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
-        >
-          <input
-            name="iceMonitoring"
-            value={formData.iceMonitoring}
-            onChange={handleChange}
-            className="bg-transparent border-black border-4 p-4 w-[250px] rounded-md"
-            placeholder="ICE Monitoring?"
-          />
+        <div>See Something, Say Something</div>
+        <div className="text-xl pt-4">
+          Fill out this form for possible ICE sightings and leave the rest to us
         </div>
       </div>
-
-      {/* Additional Inputs */}
-      {[
-        "immigrationStatus",
-        "arrestNumber",
-        "reasonForRaid",
-        "reasonForCourtVisit",
-        "timeHeldBeforeICE",
-      ].map((field) => (
+      <form
+        onSubmit={handleSubmit}
+        className="border-black border-1 flex flex-col pl-32 pr-32 justify-center items-center"
+      >
+        {/* Address Input with Autocomplete */}
         <div
-          key={field}
+          className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
+        >
+          {isLoaded && (
+            <Autocomplete onLoad={onLoad} onPlaceChanged={onPlaceChanged}>
+              <input
+                name="placeOfArrest"
+                value={formData.placeOfArrest}
+                onChange={handleChange}
+                className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
+                placeholder="Place of Arrest"
+              />
+            </Autocomplete>
+          )}
+        </div>
+
+        {/* Email Input */}
+        <div
           className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
         >
           <input
-            name={field}
-            value={formData[field as keyof typeof formData] ?? ""}
+            name="email"
+            type="email"
+            value={formData.email}
             onChange={handleChange}
             className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
-            placeholder={field.replace(/([A-Z])/g, " $1")}
+            placeholder="Email"
           />
         </div>
-      ))}
 
-      {/* Additional Info */}
-      <div
-        className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
-      >
-        <textarea
-          name="additionalInfo"
-          value={formData.additionalInfo}
-          onChange={handleChange}
-          className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
-          placeholder="Additional Info"
-        />
-      </div>
+        {/* Date & ICE Monitoring */}
+        <div className="flex flex-row">
+          <div
+            className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
+          >
+            <input
+              name="dateOfArrest"
+              type="date"
+              value={formData.dateOfArrest}
+              onChange={handleChange}
+              className="bg-transparent border-black border-4 p-4 w-[275px] rounded-md"
+            />
+          </div>
+          <div
+            className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
+          >
+            <input
+              name="iceMonitoring"
+              value={formData.iceMonitoring}
+              onChange={handleChange}
+              className="bg-transparent border-black border-4 p-4 w-[250px] rounded-md"
+              placeholder="ICE Monitoring?"
+            />
+          </div>
+        </div>
 
-      {/* Submit Button */}
-      <button
-        type="submit"
-        className="mt-4 bg-black text-white py-2 px-6 rounded-md text-xl tracking-wide"
-      >
-        Submit
-      </button>
-    </form>
+        {/* Additional Inputs */}
+        {[
+          "immigrationStatus",
+          "arrestNumber",
+          "reasonForRaid",
+          "reasonForCourtVisit",
+          "timeHeldBeforeICE",
+        ].map((field) => (
+          <div
+            key={field}
+            className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
+          >
+            <input
+              name={field}
+              value={formData[field as keyof typeof formData] ?? ""}
+              onChange={handleChange}
+              className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
+              placeholder={field.replace(/([A-Z])/g, " $1")}
+            />
+          </div>
+        ))}
+
+        {/* Additional Info */}
+        <div
+          className={`${josefinSans.className} tracking-widest p-4 flex flex-row justify-center items-center text-2xl w-fit`}
+        >
+          <textarea
+            name="additionalInfo"
+            value={formData.additionalInfo}
+            onChange={handleChange}
+            className="bg-transparent border-black border-4 p-4 w-[550px] rounded-md"
+            placeholder="Additional Info"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button
+          type="submit"
+          className={`mt-4 bg-black text-white py-6 px-12 rounded-md text-xl tracking-wide  hover:bg-[#262626] border-black border-4`}
+        >
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
